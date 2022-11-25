@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "java-client-ol.fullname" . }}
+  app: {{ include "java-client-ol.fullname" . }}
   labels:
     {{- include "java-client-ol.labels" . | nindent 4 }}
 spec:
