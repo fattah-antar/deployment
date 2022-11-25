@@ -2,13 +2,13 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: java-client-ol
+  name: {{ include "java-client-ol.fullname" . }}
 spec:
   port:
     targetPort: 9080-tcp
   to:
     kind: Service
-    name: java-client-ol
+    name: {{ include "java-client-ol.fullname" . }}
   tls:
     insecureEdgeTerminationPolicy: Redirect
     termination: edge
